@@ -5,7 +5,9 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const router = express.Router();
 
+//My routes
 const authRoutes = require("./routes/auth");
+const userRoutes = require("./routes/user");
 
 require("dotenv").config();
 
@@ -33,6 +35,7 @@ app.use(cors());
 
 //Routers
 app.use("/api", authRoutes);
+app.use("/api", userRoutes);
 
 //Backend Connection
 app.listen(PORT, () => {
