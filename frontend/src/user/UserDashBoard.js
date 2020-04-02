@@ -8,11 +8,13 @@
 */
 
 import React from "react";
-const App = () => {
+import Base from "../core/Base";
+
+const UserDashBoard = () => {
   return (
-    <div>
-      <h1>Sayantan</h1>
-    </div>
+    <Base title="UserDashBoard">
+      <h1>UserDashBoard</h1>
+    </Base>
   );
 };
-export default App;
+export default UserDashBoard;

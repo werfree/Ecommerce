@@ -17,8 +17,8 @@ exports.getProductByID = (req, res, next, id) => {
 };
 
 exports.getAllProducts = (req, res) => {
-  let limit = req.query.limit ? parseInt(req.query.limit) : 8;
-  let sortBy = req.query.sortBy ? req.query.sortBy : "price";
+  let limit = req.query.limit ? parseInt(req.query.limit) : 20;
+  let sortBy = req.query.sortBy ? req.query.sortBy : "createdAt";
   Product.find()
     .select("-photo")
     .populate("category")
@@ -44,16 +44,16 @@ exports.getProduct = (req, res) => {
 };
 
 // Get All Categories
-exports.getAllUniqueCategories=(req,res)=>{
-  Product.distinct("category",{},(err,category)=>{
+exports.getAllUniqueCategories = (req, res) => {
+  Product.distinct("category", {}, (err, category) => {
     if (err || !category) {
       res.status(400).json({
         error: "No category Found"
       });
     }
     res.json(category);
-  })
-}
+  });
+};
 // Create Product
 exports.createProduct = (req, res) => {
   let form = new formidable.IncomingForm();
@@ -87,6 +87,8 @@ exports.createProduct = (req, res) => {
         });
       }
       product.photo.data = fileSystem.readFileSync(file.photo.path);
+      console.log(file.photo.path);
+
       product.photo.contentType = file.photo.type;
     }
     product.save((err, product) => {
@@ -108,8 +110,9 @@ exports.updateProduct = (req, res) => {
 
   form.parse(req, (err, fields, file) => {
     if (err) {
+      console.log(err);
       return res.status(400).json({
-        error: "Image not Uplaoded",
+        error: "Update Fail",
         err
       });
     }

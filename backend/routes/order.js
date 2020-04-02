@@ -30,15 +30,15 @@ router.post(
   updateStock,
   createOrder
 );
+router.post("/order/create/:userId", (req, res) => {
+  console.log(req.body);
+  res.send("Hii");
+});
 
-//Get All orders
-router.get(
-  "/order/all/:userId",
-  isSignedIn,
-  isAuthenticated,
-  isAdmin,
-  getAllOrders
-);
+router.get("/order", (req, res) => {
+  console.log("order");
+  res.send(200);
+});
 
 //Status of order
 

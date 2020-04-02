@@ -18,7 +18,7 @@ exports.createCategory = (req, res) => {
     if (err || !category) {
       return res.status(400).json({
         err,
-        errmsg: "Category not created"
+        error: "Category not created"
       });
     }
     return res.status(200).json(category);

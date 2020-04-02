@@ -29,13 +29,7 @@ router.get("/category/:categoryId", getCategory);
 router.get("/categories", getAllCategory);
 
 // Update category
-router.put(
-  "/category/:categoryId/:userId",
-  isSignedIn,
-  isAuthenticated,
-  isAdmin,
-  updateCategory
-);
+router.put("/category/:categoryId/:userId", updateCategory);
 
 // Delete
 
