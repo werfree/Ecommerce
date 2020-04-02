@@ -4,7 +4,7 @@
 - React Js
 - Node Js
 - BrainTree (For payment)
-##  How To Run The Site
+##  How To Open The Website and run the server
 -  Clone the repo
 -  Open Terminal
 ### To Launch the front end (React Js)
