@@ -1,8 +1,8 @@
 # E-Commerce WebSite
 ## Tech Stack
 - Mongo DB
-- React Js
-- Node Js
+- React JS
+- Node JS
 - BrainTree (For payment)
 ##  How To Open The Website and run the server
 -  Clone the repo
