@@ -1,6 +1,7 @@
 # E-Commerce WebSite
 ## Tech Stack
 - Mongo DB
+--Locally
 - React JS
 - Node JS
 - BrainTree (For payment)
