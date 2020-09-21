@@ -1,10 +1,11 @@
 # E-Commerce WebSite
+>
 ## Tech Stack
 - Mongo DB
---Locally
 - React JS
 - Node JS
 - BrainTree (For payment)
+>
 ##  How To Open The Website and run the server
 -  Clone the repo
 -  Open Terminal
